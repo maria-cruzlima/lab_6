@@ -1,43 +1,29 @@
 #include <iostream>
-#include <cmath>
+#include <cmath> //contiene las definiciones de las funciones matematicas (sqrt)
+
 using namespace std;
+class Punto {
+public:
+    // Constructor
+    Punto(double x = 0, double y = 0) : x(x), y(y) {}
 
-class punto {
-    private:
-        double x, y;
-    public:
-        punto(double x, double y) {
-            this-> x = x;
-            this-> y = y;
-        }
+    // Sobrecarga del operador ->*
+    double operator ->*(const Punto* p) {
+        double dx = x - p->x;
+        double dy = y - p->y;
+        return sqrt(dx*dx + dy*dy);
+    }
 
-        double distancia(punto p) {
-            double dx = this-> x - p.x;
-            double dy = this-> y - p.y;
-            return sqrt(dx*dx + dy*dy);
-        } 
-
-        double distanciaor() {
-            punto origen(0,0);
-            return this->distancia(origen);
-        }
-
-        double distanciaop(const punto& op){
-            return sqrt(pow(x - op.x, 2) + pow(y - op.y, 2));
-        }
+private:
+    double x, y;
 };
 
-int main(){
-    punto p1(4, 7);
-    punto p2(1, 2);
-    
-    cout << "distancia entre los puntos: " << p1.distancia(p2) << std::endl;
-    cout << "distancia desde el punto de origen (" << p1.distanciaor() << ")" << std::endl;
-    cout << "distancia desde el punto de origen (" << p2.distanciaor() << ")" << std::endl;
-    
-    punto p3(2, 3);
-    cout << "distancia entre los puntos: " << p1.distancia(p3) <<endl;
-    cout << "distancia entre los puntos: " << p2.distanciaop(p3) <<endl;
+int main() {
+    Punto p1(1.0, 1.0);
+    Punto p2(4.0, 5.0);
+
+    double distancia = p1 ->* &p2;
+    cout << "La distancia entre p1 y p2 es: " << distancia << endl;
+
     return 0;
 }
-
