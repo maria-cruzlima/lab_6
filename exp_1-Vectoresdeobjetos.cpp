@@ -80,7 +80,7 @@ int main() {
     }
     
     for (const Estudiante& estudiante : estudiantes) {
-        if (estudiante.getPromedio() < 1.0 or estudiante.getPromedio() > 20.0) {
+        if (estudiante.getPromedio() < 1.0 || estudiante.getPromedio() > 20.0) {
             cout << "Error: Las notas de " << estudiante << "están fuera del rango permitido";
         }
     }
