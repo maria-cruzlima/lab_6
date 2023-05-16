@@ -48,20 +48,26 @@ public:
 };
 
 int main() {
+   cout<<"ejemplo1"<<"\n";
     Banco::settasainteres(0.05f);
-
     CuentaBancaria cuenta(1000);
     cout << "tasa de interes: " << Banco::gettasainteres() <<endl;
     cout << "saldo inicial: " << cuenta.getsaldo() <<endl;
-
     cuenta.depositar(500);
     cout << "saldo del deposito: " << cuenta.getsaldo() <<endl;
-
     cuenta.retirar(200);
     cout <<"saldo del retiro: " << cuenta.getsaldo() << endl;
+    cout <<"interes ganado: " << cuenta.calcularinteres() <<endl;
 
-    float interes = cuenta.calcularinteres();
-    cout <<"interes ganado: " << interes <<endl;
-
+    cout<<"ejemplo2"<<"\n";
+    Banco::settasainteres(0.1f);
+    CuentaBancaria cuenta2(1000);
+    cout << "tasa de interes: " << Banco::gettasainteres() <<endl;
+    cout << "saldo inicial: " << cuenta.getsaldo() <<endl;
+    cuenta.depositar(500);
+    cout << "saldo del deposito: " << cuenta.getsaldo() <<endl;
+    cuenta.retirar(200);
+    cout <<"saldo del retiro: " << cuenta.getsaldo() << endl;
+    cout <<"interes ganado: " << cuenta.calcularinteres() <<endl;
     return 0;
 }
