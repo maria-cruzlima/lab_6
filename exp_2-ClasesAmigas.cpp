@@ -36,9 +36,13 @@ void calculaArea(Circuferencia& circulo){
 }
 
 int main(){
-    
-    Circuferencia total(5,10); //total=intancia[2]
-    total.mostrar();//metodo para mostrar datos [1]
-    calculaArea(total);
-
+    cout<<"ejemplo1"<<"\n";
+    Circuferencia total1(5,10); //total=intancia[2]
+    total1.mostrar();//metodo para mostrar datos [1]
+    calculaArea(total1);
+    cout<<"ejemplo2"<<"\n";
+    Circuferencia total2(6,20); //total2=intancia[2]
+    total2.mostrar();//metodo para mostrar datos [1]
+    calculaArea(total2);
+    return 0;
 }
