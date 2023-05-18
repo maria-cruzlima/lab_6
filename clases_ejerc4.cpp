@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 // Clase para representar un vector en 2D
 class Vector2D {
@@ -40,10 +41,10 @@ int main() {
     Vector2D resta = v1 - v2;
 
     // Imprimir los resultados
-    std::cout << "v1 = (" << v1.x << ", " << v1.y << ")" << std::endl;
-    std::cout << "v2 = (" << v2.x << ", " << v2.y << ")" << std::endl;
-    std::cout << "v1 + v2 = (" << suma.x << ", " << suma.y << ")" << std::endl;
-    std::cout << "v1 - v2 = (" << resta.x << ", " << resta.y << ")" << std::endl;
+    cout << "v1 = (" << v1.x << ", " << v1.y << ")" << endl;
+    cout << "v2 = (" << v2.x << ", " << v2.y << ")" << endl;
+    cout << "v1 + v2 = (" << suma.x << ", " << suma.y << ")" << endl;
+    cout << "v1 - v2 = (" << resta.x << ", " << resta.y << ")" << endl;
 
     return 0;
 }
