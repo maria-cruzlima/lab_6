@@ -7,24 +7,16 @@ public:
     Vector2D() : x(0.0), y(0.0) {}
     Vector2D(double xx, double yy) : x(xx), y(yy) {}
 
-    // Operaciones de vectores
-    Vector2D operator+(const Vector2D& v) const {
-        return Vector2D(x + v.x, y + v.y);
-    }
-
-    Vector2D operator-(const Vector2D& v) const {
-        return Vector2D(x - v.x, y - v.y);
-    }
 
     // Sobrecarga de operadores
     friend Vector2D operator + (const Vector2D& v1, const Vector2D& v2) {
-        return (v1 + v2);
+        return Vector2D(v1.x + v2.x, v1.y + v2.y);;
     }
 
     friend Vector2D operator - (const Vector2D& v1, const Vector2D& v2) {
         double x ;
         x = v1 - v2;
-        return x;
+        return Vector2D(v1.x + v2.x, v1.y + v2.y);;
     }
 
     // Variables miembro
@@ -41,10 +33,10 @@ int main() {
     Vector2D resta = v1 - v2;
 
     // Imprimir los resultados
-    std::cout << "v1 = (" << v1.x << ", " << v1.y << ")" << std::endl;
-    std::cout << "v2 = (" << v2.x << ", " << v2.y << ")" << std::endl;
-    std::cout << "v1 + v2 = (" << suma.x << ", " << suma.y << ")" << std::endl;
-    std::cout << "v1 - v2 = (" << resta.x << ", " << resta.y << ")" << std::endl;
+    d:cout << "v1 = (" << v1.x << ", " << v1.y << ")" << std::endl;
+    cout << "v2 = (" << v2.x << ", " << v2.y << ")" << std::endl;
+    cout << "v1 + v2 = (" << suma.x << ", " << suma.y << ")" << std::endl;
+    cout << "v1 - v2 = (" << resta.x << ", " << resta.y << ")" << std::endl;
 
     return 0;
 }
